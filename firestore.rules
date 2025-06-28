@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to authenticated users on their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Allow read/write access to chat documents if the user is a participant
+    match /chats/{chatId} {
+      allow read, write: if request.auth != null && request.resource.data.userIDs.hasAny([request.auth.uid]);
+    }
+
+    // Allow read/write access to userchats documents if the user is the owner
+    match /userchats/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

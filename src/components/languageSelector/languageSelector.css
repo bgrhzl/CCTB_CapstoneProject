@@ -1,0 +1,231 @@
+.language-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.language-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.language-dropdown {
+  position: relative;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  justify-content: space-between;
+  color: white;
+}
+
+.language-button:hover:not(:disabled) {
+  border-color: #5183fe;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(81, 131, 254, 0.3);
+}
+
+.language-button:focus {
+  outline: none;
+  border-color: #5183fe;
+  box-shadow: 0 0 0 2px rgba(81, 131, 254, 0.3);
+}
+
+.language-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.language-button.loading {
+  pointer-events: none;
+}
+
+.language-flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.language-name {
+  flex: 1;
+  text-align: left;
+  color: white;
+}
+
+.language-arrow {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.language-arrow.open {
+  transform: rotate(180deg);
+}
+
+.language-spinner {
+  font-size: 12px;
+  color: #5183fe;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(17, 25, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 4px;
+  backdrop-filter: blur(10px);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: all 0.2s ease;
+  position: relative;
+  color: white;
+}
+
+.language-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-option.selected {
+  background-color: rgba(81, 131, 254, 0.3);
+  color: #5183fe;
+}
+
+.language-option:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.language-option:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.checkmark {
+  margin-left: auto;
+  color: #5183fe;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.language-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: transparent;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .language-selector {
+    gap: 6px;
+  }
+
+  .language-button {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-width: 100px;
+  }
+
+  .language-option {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .language-menu {
+    max-height: 250px;
+  }
+}
+
+/* Compact version for header */
+.language-selector.compact .language-button {
+  padding: 4px 8px;
+  min-width: 80px;
+  font-size: 12px;
+}
+
+.language-selector.compact .language-flag {
+  font-size: 14px;
+}
+
+.language-selector.compact .language-name {
+  display: none;
+}
+
+.language-selector.compact .language-arrow {
+  font-size: 8px;
+}
+
+/* Animation for dropdown */
+.language-menu {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for language menu */
+.language-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.language-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.language-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.language-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
