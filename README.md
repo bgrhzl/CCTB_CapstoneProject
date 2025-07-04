@@ -407,6 +407,16 @@ For support and questions:
 4. Contact the development team
 
 ---
+![image](https://github.com/user-attachments/assets/321d5146-c193-417e-aa9a-1633105cad70)
+![image](https://github.com/user-attachments/assets/ebc36305-2205-44de-9ce5-0769079ffb50)
+![image](https://github.com/user-attachments/assets/9dd8ea80-3974-4d88-9ea9-66f7f980c500)
+![image](https://github.com/user-attachments/assets/fcb0bfad-6230-4b68-a2ba-2efe1b66c287)
+![image](https://github.com/user-attachments/assets/05e7ea20-e9b2-4e61-bdd9-c36e74e0952f)
+![image](https://github.com/user-attachments/assets/f88ddbab-7dc8-47b5-b173-84d83bbce36b)
+![image](https://github.com/user-attachments/assets/50aae1da-68f6-49f6-8927-b6e94d96e2ac)
+
+
+
 
 **🎉 Enjoy your multilingual chat experience!**
 
